@@ -1,0 +1,15 @@
+# Ignorar arquivos e diretórios na pasta challenge
+challenge/.venv/
+challenge/*/__pycache__/
+challenge/*.py[cod]
+challenge/*.so
+challenge/*.log
+challenge/*.pytest_cache
+challenge/*.coverage
+challenge/poetry.lock
+challenge/*.mypy_cache
+challenge/*.vscode
+challenge/*.cache
+
+.mypy_cache
+.pytest_cache
