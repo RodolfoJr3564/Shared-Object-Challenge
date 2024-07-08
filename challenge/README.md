@@ -58,7 +58,7 @@ poetry run pytest
 Para verificar a cobertura de testes do seu projeto, você pode usar o `pytest-cov`:
 
 ```bash
-poetry run pytest --cov=challenge
+poetry run pytest --cov=processor
 ```
 
 ## Formatando Código
