@@ -1,15 +1,53 @@
-# Ignorar arquivos e diretórios na pasta challenge
-challenge/.venv/
-challenge/*/__pycache__/
-challenge/*.py[cod]
-challenge/*.so
-challenge/*.log
-challenge/*.pytest_cache
-challenge/*.coverage
-challenge/poetry.lock
-challenge/*.mypy_cache
-challenge/*.vscode
-challenge/*.cache
+# Ignorar a pasta virtualenv
+/.venv/
 
-.mypy_cache
-.pytest_cache
+# Ignorar __pycache__ em qualquer lugar do repositório
+**/__pycache__/
+
+# Ignorar arquivos compilados Python em qualquer lugar do repositório
+*.py[cod]
+
+# Ignorar arquivos de extensão compartilhada
+*.so
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar cache do pytest
+.pytest_cache/
+**/.pytest_cache/
+
+# Ignorar cobertura de testes
+*.coverage
+
+# Ignorar arquivo poetry.lock
+poetry.lock
+
+# Ignorar cache do mypy
+.mypy_cache/
+**/.mypy_cache/
+
+# Ignorar diretórios .vscode
+.vscode/
+**/.vscode/
+
+# Ignorar outros caches e informações de build
+*.cache
+*.egg-info
+**/*.egg-info/
+htmlcov/
+
+# Diretórios e arquivos específicos na pasta challenge
+/challenge/.venv/
+/challenge/__pycache__/
+/challenge/*.py[cod]
+/challenge/*.so
+/challenge/*.log
+/challenge/.pytest_cache/
+/challenge/*.coverage
+/challenge/poetry.lock
+/challenge/.mypy_cache/
+/challenge/.vscode/
+/challenge/*.cache
+/challenge/*.egg-info/
+/challenge/htmlcov/
