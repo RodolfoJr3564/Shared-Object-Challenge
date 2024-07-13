@@ -8,7 +8,11 @@ class LexerInterface(ABC):
         raise NotImplementedError("This method should be overridden.")
 
     @abstractmethod
-    def lines_split_lazy(self, full_string: str, line_delimiter: str) -> Iterator[str]:
+    def lines_split_lazy(
+        self,
+        full_string: str,
+        line_delimiter: str,
+    ) -> Iterator[str]:
         raise NotImplementedError("This method should be overridden.")
 
 
@@ -21,7 +25,7 @@ class Lexer(LexerInterface):
         self.delimiter = delimiter
 
     def tokenize(self, data: str) -> List[str]:
-        return data.split(self.delimiter)
+        return data.split(self.delimiter) or []
 
     def lines_split_lazy(
         self, full_string: str, line_delimiter: str = "\n"
