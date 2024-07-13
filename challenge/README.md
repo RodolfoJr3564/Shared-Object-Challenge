@@ -19,6 +19,12 @@ Depois de instalar o `poetry`, você pode verificar se a instalação foi bem-su
 
 ## Iniciando o Ambiente de Desenvolvimento
 
+Entre na pasta do desafio:
+
+```bash
+cd challenge
+```
+
 Para iniciar o ambiente utilizando o `poetry` precisamos instalar as dependências listadas no `pyproject.toml`:
 
 ```bash
