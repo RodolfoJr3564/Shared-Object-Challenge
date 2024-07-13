@@ -1,10 +1,29 @@
 from typing import Callable, TextIO
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
+import pytest
+from pytest_mock import MockerFixture
 from processor.transformer.transformer import Transformer, TransformerFactory
 from processor.transformer.transformer_strategy import (
     CSVTransformedDataDTO,
     TransformStrategy,
 )
+
+
+@pytest.fixture
+def csv_transformer(
+    mocker: MockerFixture,
+) -> Callable[[str], Transformer[CSVTransformedDataDTO]]:
+    """Fixture for creating a mocked CSV Transformer instance."""
+
+    def _csv_transformer(delimiter: str) -> Transformer[CSVTransformedDataDTO]:
+        mock_transformer: MagicMock = mocker.create_autospec(Transformer, instance=True)
+        mock_transformer.file_transform_lazy.return_value = CSVTransformedDataDTO(
+            headers=["header1", "header2"],
+            rows=iter([["data1", "data2"], ["data3", "data4"]]),
+        )
+        return mock_transformer
+
+    return _csv_transformer
 
 
 def test_transformer_transform_success(
