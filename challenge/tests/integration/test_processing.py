@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from processor.csv_processor import process_csv_file
+from processor_py.processor import process_csv_file
 
 from _pytest.capture import CaptureFixture
 

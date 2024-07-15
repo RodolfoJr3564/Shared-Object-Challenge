@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 from _pytest.capture import CaptureFixture
 from unittest.mock import MagicMock, patch, mock_open
-from processor.csv_processor import process_csv_file
+from processor_py.processor import process_csv_file
 
 mock_csv_data = "name,age,experience\nAlice,30,5\nBob,25,3\nCharlie,35,10"
 mock_csv_data_with_extra = (
@@ -58,7 +58,9 @@ def test_non_existent_columns_in_selection_string(
     row_filter_definitions: str = ""
     with pytest.raises(SystemExit):
         process_csv_file(str(csv_file), selected_columns, row_filter_definitions)
+
     _, err = capfd.readouterr()
+
     assert "Header 'nonexistent' not found in CSV file/string" == err
 
 

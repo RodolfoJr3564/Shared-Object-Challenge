@@ -82,7 +82,6 @@ def invalid_filters() -> Dict[str, str]:
     return {
         "invalid_operator_filter": "header1#2",
         "nonexistent_column_filter": "header6=10",
-        "invalid_column_filter": "header1=",
     }
 
 

@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 from _pytest.capture import CaptureFixture
 from unittest.mock import MagicMock, patch, mock_open
-from processor.csv_processor import process_csv_file
+from processor_py.processor import process_csv_file
 
 mock_csv_data = "name,age,experience\nAlice,30,5\nBob,25,3\nCharlie,35,10"
 mock_csv_data_with_extra = (
