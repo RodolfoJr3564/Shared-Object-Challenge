@@ -7,6 +7,9 @@
 - [Formatando Código](#formatando-código)
 - [Verificando Estilo do Código](#verificando-estilo-do-código)
 - [Estrutura Final do Projeto](#estrutura-final-do-projeto)
+- [Conversão Estruturada de Arquivos `.py` para `.pyx`](#conversão-estruturada-de-arquivos-py-para-pyx)
+  - [Funcionalidades](#funcionalidades)
+  - [Uso do Script](#uso-do-script)
 
 ## Requisitos de Para Execução do projeto
 
@@ -99,3 +102,54 @@ challenge/
 ├── pyproject.toml
 └── README.md
 ```
+
+## Conversão Estruturada de Arquivos `.py` para `.pyx`
+
+Este projeto inclui um script chamado `py-to-pyx.sh` que facilita a conversão de arquivos `.py` para `.pyx`, preservando a estrutura original de diretórios. O script oferece funcionalidades para listar e converter arquivos, tornando o processo mais eficiente e automatizado para prepará-los para a compilação com Cython.
+
+### Funcionalidades
+
+1. **Listar Arquivos**:
+
+   - O script pode listar a estrutura de pastas e arquivos `.py` encontrados em um diretório especificado.
+
+2. **Converter Arquivos**:
+   - Converte arquivos `.py` para `.pyx`, mantendo a estrutura original de diretórios.
+   - Cria automaticamente a pasta de saída se ela não existir.
+   - Substitui a pasta de saída se ela já existir, com uma opção para forçar a substituição sem confirmação do usuário.
+
+### Uso do Script
+
+1. **Tornar o Script Executável**:
+
+   - Antes de executar o script, é necessário torná-lo executável com o comando:
+     ```bash
+     chmod +x py-to-pyx.sh
+     ```
+
+2. **Comandos Disponíveis**:
+
+   - **Listar Arquivos**:
+
+     - Para listar a estrutura de pastas e arquivos `.py` em um diretório:
+       ```bash
+       ./py-to-pyx.sh -l <path>
+       ```
+     - Exemplo:
+       ```bash
+       ./py-to-pyx.sh -l processor
+       ```
+
+   - **Converter Arquivos**:
+     - Para converter arquivos `.py` para `.pyx`:
+       ```bash
+       ./py-to-pyx.sh -c -i <input> -o <output> [-f]
+       ```
+     - Exemplo para converter arquivos da pasta `processor` para a pasta `processor-pyx`:
+       ```bash
+       ./py-to-pyx.sh -c -i processor -o processor-pyx
+       ```
+     - Exemplo para converter e forçar a substituição da pasta de saída:
+       ```bash
+       ./py-to-pyx.sh -c -i processor -o processor-pyx -f
+       ```
