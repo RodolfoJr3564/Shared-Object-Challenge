@@ -35,6 +35,9 @@ poetry.lock
 *.cache
 *.egg-info
 **/*.egg-info/
+**/build/
+**/*.c
+**/*.o
 htmlcov/
 
 # Diretórios e arquivos específicos na pasta challenge
